@@ -1,0 +1,58 @@
+>> t = [0:0.01:0.98];   %initialize matrix [start:increament:end]
+>> y1 = sin(2*pi*4*t);
+>> 
+>> plot(t, y1);   %plot graph with horizontal = t and vertical = y1 axises
+>> y2 = cos(2*pi*4*t);
+>> hold on;   %instruct to hold the first plot for the next incoming plots
+>> plot(t,y2,'r');  %plot graph and with color red = r
+>> xlabel('time')   %label the x axis
+>> ylabel('value')   %label the y axis
+>> legend('sin','cos')  %put legend in the graph
+>> title('GB Plot')   %put title
+>> close   %close the plot
+>> 
+>> 
+>> figure(1); plot(t,y1)   %put this pot in figure 1
+>> figure(2); plot(t,y2);   %put this pot in figure 2
+>> subplot(1,2,1);    %divide the plot into 1*2 grid and access the 1st element
+>> plot(t,y1);
+>> subplot(1,2,2);    %divide the plot into 1*2 grid and access the 2nd element
+>> plot(t,y2);
+>> axis([0.5 1 -1 1]);  %change the axix values
+>> 
+>> 
+>> 
+>> clf   %clear the figure
+>> 
+>> 
+>> A = magic(5)
+
+A =
+
+    17    24     1     8    15
+    23     5     7    14    16
+     4     6    13    20    22
+    10    12    19    21     3
+    11    18    25     2     9
+
+>> imagesc(A)
+>> imagesc(A), colorbar, colormap gray;    %put colorbar, colromap of grey scale
+>> 
+>> a = 1, b = 2, c = 3;   %comma(,) chaining of commands
+
+a =
+
+     1
+
+
+b =
+
+     2
+
+>> c
+
+c =
+
+     3
+
+>> close

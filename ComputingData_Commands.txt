@@ -1,0 +1,590 @@
+>> A = [1 2; 3 4; 5 6]
+
+A =
+
+     1     2
+     3     4
+     5     6
+
+>> B = [11 12; 13 14; 15 16]
+
+B =
+
+    11    12
+    13    14
+    15    16
+
+>> C = [1 1; 2 2]
+
+C =
+
+     1     1
+     2     2
+
+>> A*C   %matrix multiplication
+
+ans =
+
+     5     5
+    11    11
+    17    17
+
+>> A
+
+A =
+
+     1     2
+     3     4
+     5     6
+
+>> B
+
+B =
+
+    11    12
+    13    14
+    15    16
+
+>> A . *B   %element wise multiplication of 2 matrices with same dimension
+Error: "A" was previously used as a variable, conflicting with its use here as the name of a function
+or command.
+See "How MATLAB Recognizes Command Syntax" in the MATLAB documentation for details.
+ 
+>> A .* B   %element wise multiplication of 2 matrices with same dimension
+
+ans =
+
+    11    24
+    39    56
+    75    96
+
+>> A
+
+A =
+
+     1     2
+     3     4
+     5     6
+
+>> A .^ 2   %squar all the elements of A
+
+ans =
+
+     1     4
+     9    16
+    25    36
+
+>> 1 ./ A    %inverse of all the elements of A
+
+ans =
+
+    1.0000    0.5000
+    0.3333    0.2500
+    0.2000    0.1667
+
+>> V = [1;2;3]
+
+V =
+
+     1
+     2
+     3
+
+>> log(V)   %element wise logarithms on matrices
+
+ans =
+
+         0
+    0.6931
+    1.0986
+
+>> log(A)
+
+ans =
+
+         0    0.6931
+    1.0986    1.3863
+    1.6094    1.7918
+
+>> exp(V)   %element wise exponential on matrices
+
+ans =
+
+    2.7183
+    7.3891
+   20.0855
+
+>> exp(A)
+
+ans =
+
+    2.7183    7.3891
+   20.0855   54.5982
+  148.4132  403.4288
+
+>> abs(V)   %element wise absolute value on matrices
+
+ans =
+
+     1
+     2
+     3
+
+>> abs([-1;-2;-4])
+
+ans =
+
+     1
+     2
+     4
+
+>> -V   %same as -1*V
+
+ans =
+
+    -1
+    -2
+    -3
+
+>> abs(-V)
+
+ans =
+
+     1
+     2
+     3
+
+>> V + ones(length(V),1)   %add a matrix of ones(3,1) to V
+
+ans =
+
+     2
+     3
+     4
+
+>> V
+
+V =
+
+     1
+     2
+     3
+
+>> length(V)
+
+ans =
+
+     3
+
+>> 
+>> 
+>> A
+
+A =
+
+     1     2
+     3     4
+     5     6
+
+>> A'   %Transpose of matrix
+
+ans =
+
+     1     3     5
+     2     4     6
+
+>> (A')'   %transpose of transpose
+
+ans =
+
+     1     2
+     3     4
+     5     6
+
+>> max(V)
+
+ans =
+
+     3
+
+>> a = [1 15 2 0.5]
+
+a =
+
+    1.0000   15.0000    2.0000    0.5000
+
+>> val = max(a)  %returns the max of a matrix(row vector)
+
+val =
+
+    15
+
+>> [val, ind] = max(a)  %returns the max value and its index number
+
+val =
+
+    15
+
+
+ind =
+
+     2
+
+>> max(A)   % returns column wise max
+
+ans =
+
+     5     6
+
+>> A
+
+A =
+
+     1     2
+     3     4
+     5     6
+
+>> a
+
+a =
+
+    1.0000   15.0000    2.0000    0.5000
+
+>> a < 3  %returns element wise coparison operation result 0 = false and 1 = true
+
+ans =
+
+  1×4 logical array
+
+   1   0   1   1
+
+>> find(a<3)   %returns the indices of the elements that satisfy the condition
+
+ans =
+
+     1     3     4
+
+>> help magic
+ magic  Magic square.
+    magic(N) is an N-by-N matrix constructed from the integers
+    1 through N^2 with equal row, column, and diagonal sums.
+    Produces valid magic squares for all N > 0 except N = 2.
+
+    Reference page for magic
+
+>> magic(3)   %returns the magic matrix with 3*3 dimension
+
+ans =
+
+     8     1     6
+     3     5     7
+     4     9     2
+
+>> magic(3)   %returns the magic matrix with 3*3 dimension
+
+ans =
+
+     8     1     6
+     3     5     7
+     4     9     2
+
+>> D = magic(3)
+
+D =
+
+     8     1     6
+     3     5     7
+     4     9     2
+
+>> [r,c] = find(D >= 7)   %returns the row and col indices which satisfies the condition
+
+r =
+
+     1
+     3
+     2
+
+
+c =
+
+     1
+     2
+     3
+
+>> D(3,2)
+
+ans =
+
+     9
+
+>> a
+
+a =
+
+    1.0000   15.0000    2.0000    0.5000
+
+>> sum(a)   %sum all the element of matrix
+
+ans =
+
+   18.5000
+
+>> A
+
+A =
+
+     1     2
+     3     4
+     5     6
+
+>> sum(A)
+
+ans =
+
+     9    12
+
+>> prod(a)   %multiply all the elements of matrix
+
+ans =
+
+    15
+
+>> prod(A)
+
+ans =
+
+    15    48
+
+>> floor(a)  %round off the elemts down
+
+ans =
+
+     1    15     2     0
+
+>> a
+
+a =
+
+    1.0000   15.0000    2.0000    0.5000
+
+>> 
+>> ceil(a)  %round up the elemnts
+
+ans =
+
+     1    15     2     1
+
+>> D
+
+D =
+
+     8     1     6
+     3     5     7
+     4     9     2
+
+>> max(D,[],1)   %returns columen wise max values. '1' denotes the first dimension of the matrix
+
+ans =
+
+     8     9     7
+
+>> max(D,[],2)   %returns row wise max values. '2' denotes the 2nd dimension of the matrix
+
+ans =
+
+     8
+     7
+     9
+
+>> max(A)   %default is column wise max
+
+ans =
+
+     5     6
+
+>> max(D)   %default is column wise max
+
+ans =
+
+     8     9     7
+
+>> D(:)  %returns matrix in vector format
+
+ans =
+
+     8
+     3
+     4
+     1
+     5
+     9
+     6
+     7
+     2
+
+>> max(D(:))   %returns the max of all the elements
+
+ans =
+
+     9
+
+>> max(max(D))   %returns the max of all the elements
+
+ans =
+
+     9
+
+>> 
+>> D = magic(9)
+
+D =
+
+    47    58    69    80     1    12    23    34    45
+    57    68    79     9    11    22    33    44    46
+    67    78     8    10    21    32    43    54    56
+    77     7    18    20    31    42    53    55    66
+     6    17    19    30    41    52    63    65    76
+    16    27    29    40    51    62    64    75     5
+    26    28    39    50    61    72    74     4    15
+    36    38    49    60    71    73     3    14    25
+    37    48    59    70    81     2    13    24    35
+
+>> sum(D,1)   %column wise sum of the elements. '1' denotes the first dimemnsion
+
+ans =
+
+   369   369   369   369   369   369   369   369   369
+
+>> sum(D,2)   %row wise sum of the elements. '2' denotes the 2nd dimemnsion
+
+ans =
+
+   369
+   369
+   369
+   369
+   369
+   369
+   369
+   369
+   369
+
+>> sum(D,2)   %row wise sum of the elements. '2' denotes the 2nd dimemnsion
+
+ans =
+
+   369
+   369
+   369
+   369
+   369
+   369
+   369
+   369
+   369
+
+>> sum(D)
+
+ans =
+
+   369   369   369   369   369   369   369   369   369
+
+>> sum(D)  %default column addition
+
+ans =
+
+   369   369   369   369   369   369   369   369   369
+
+>> D
+
+D =
+
+    47    58    69    80     1    12    23    34    45
+    57    68    79     9    11    22    33    44    46
+    67    78     8    10    21    32    43    54    56
+    77     7    18    20    31    42    53    55    66
+     6    17    19    30    41    52    63    65    76
+    16    27    29    40    51    62    64    75     5
+    26    28    39    50    61    72    74     4    15
+    36    38    49    60    71    73     3    14    25
+    37    48    59    70    81     2    13    24    35
+
+>> eye(9)   %Indentity matrix 9*9
+
+ans =
+
+     1     0     0     0     0     0     0     0     0
+     0     1     0     0     0     0     0     0     0
+     0     0     1     0     0     0     0     0     0
+     0     0     0     1     0     0     0     0     0
+     0     0     0     0     1     0     0     0     0
+     0     0     0     0     0     1     0     0     0
+     0     0     0     0     0     0     1     0     0
+     0     0     0     0     0     0     0     1     0
+     0     0     0     0     0     0     0     0     1
+
+>> sum(D .* eye(9))
+
+ans =
+
+    47    68     8    20    41    62    74    14    35
+
+>> sum(sum(D .* eye(9)))    %returns the diagonal sum of magic matrix
+
+ans =
+
+   369
+
+>> flipud(eye(9))   %flip the matrix upside down
+
+ans =
+
+     0     0     0     0     0     0     0     0     1
+     0     0     0     0     0     0     0     1     0
+     0     0     0     0     0     0     1     0     0
+     0     0     0     0     0     1     0     0     0
+     0     0     0     0     1     0     0     0     0
+     0     0     0     1     0     0     0     0     0
+     0     0     1     0     0     0     0     0     0
+     0     1     0     0     0     0     0     0     0
+     1     0     0     0     0     0     0     0     0
+
+>> D
+
+D =
+
+    47    58    69    80     1    12    23    34    45
+    57    68    79     9    11    22    33    44    46
+    67    78     8    10    21    32    43    54    56
+    77     7    18    20    31    42    53    55    66
+     6    17    19    30    41    52    63    65    76
+    16    27    29    40    51    62    64    75     5
+    26    28    39    50    61    72    74     4    15
+    36    38    49    60    71    73     3    14    25
+    37    48    59    70    81     2    13    24    35
+
+>> D = magic(3)
+
+D =
+
+     8     1     6
+     3     5     7
+     4     9     2
+
+>> temp = pinv(D)   %pinv returns the inverse of matrix
+
+temp =
+
+    0.1472   -0.1444    0.0639
+   -0.0611    0.0222    0.1056
+   -0.0194    0.1889   -0.1028
+
+>> temp * D   %returns the identity matrix
+
+ans =
+
+    1.0000    0.0000   -0.0000
+   -0.0000    1.0000    0.0000
+    0.0000   -0.0000    1.0000
+
+>> 

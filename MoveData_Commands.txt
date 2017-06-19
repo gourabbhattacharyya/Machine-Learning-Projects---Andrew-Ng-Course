@@ -1,0 +1,337 @@
+octave:1> PS1('>> ')
+>>
+>>
+>>
+>>
+>> A = [1 2;2 3; 5,4]
+A =
+
+   1   2
+   2   3
+   5   4
+
+>>
+>> A = [1 2;2 3; 5,4]  % initializing Matrix with values
+A =
+
+   1   2
+   2   3
+   5   4
+
+>> size(A)   % size of the matrix
+ans =
+
+   3   2
+
+>> size(A);   % ;does not print the value
+>>
+>> size(A,1)   % returns the size of first dimension
+ans =  3
+>>
+>> size(A,2)   % returns the size of second dimension
+ans =  2
+>>
+>> length(A)  %returns the value of longer dimentsion
+ans =  3
+>>
+>> length([1;2;3;4;5;6])   %returns the size of vector for which this function is used
+ans =  6
+>>
+
+
+
+
+
+>> pwd
+ans = C:\Users\gourabbhattacharyya\Desktop\Machine Learning
+>> ls
+ Volume in drive C has no label.
+ Volume Serial Number is FA53-9C18
+
+ Directory of C:\Users\gourabbhattacharyya\Desktop\Machine Learning
+
+[.]        [..]       data.dat   [Week1]    [Week2]
+               1 File(s)            188 bytes
+               4 Dir(s)  829,952,999,424 bytes free
+>>
+>>
+>>
+>> load data.dat    %load file from directory
+>>
+>> load('data.dat')    %load file from directory
+>>
+>> who
+Variables in the current scope:
+
+A     ans   data  v
+
+>> who  %shows variables in my octave workspace
+Variables in the current scope:
+
+A     ans   data  v
+
+>> data %display data file
+data =
+
+   0.078171   0.810167
+   0.281616   0.111698
+   0.060419   0.072902
+   0.647659   0.992759
+   0.790696   0.118109
+   0.043812   0.034684
+   0.449669   0.287645
+   0.857990   0.017025
+   0.451133   0.499226
+   0.497804   0.110127
+
+>> size(data)
+ans =
+
+   10    2
+
+>>
+>> whos    %details of the variable in scope
+Variables in the current scope:
+
+   Attr Name        Size                     Bytes  Class
+   ==== ====        ====                     =====  =====
+        A           3x2                         48  double
+        ans         1x2                         16  double
+        data       10x2                        160  double
+        v          10x2                        160  double
+
+Total is 48 elements using 384 bytes
+
+>> pwd
+ans = C:\Users\gourabbhattacharyya\Desktop\Machine Learning
+>> whos    %details of the variable in scope
+Variables in the current scope:
+
+   Attr Name        Size                     Bytes  Class
+   ==== ====        ====                     =====  =====
+        A           3x2                         48  double
+        ans         1x53                        53  char
+        data       10x2                        160  double
+        v          10x2                        160  double
+
+Total is 99 elements using 421 bytes
+
+>> whos    %details of the variable in scope
+Variables in the current scope:
+
+   Attr Name        Size                     Bytes  Class
+   ==== ====        ====                     =====  =====
+        A           3x2                         48  double
+        ans         1x53                        53  char
+        data       10x2                        160  double
+        v          10x2                        160  double
+
+Total is 99 elements using 421 bytes
+
+>> d = data(1:2)  %store 2*2 data from data file to d variable
+d =
+
+   0.078171   0.281616
+
+>> whos    %details of the variable in scope
+Variables in the current scope:
+
+   Attr Name        Size                     Bytes  Class
+   ==== ====        ====                     =====  =====
+        A           3x2                         48  double
+        ans         1x53                        53  char
+        d           1x2                         16  double
+        data       10x2                        160  double
+        v          10x2                        160  double
+
+Total is 101 elements using 437 bytes
+
+>>>> whos    %details of the variable in scope
+Variables in the current scope:
+
+   Attr Name        Size                     Bytes  Class
+   ==== ====        ====                     =====  =====
+        A           3x2                         48  double
+        ans         1x53                        53  char
+        d           1x2                         16  double
+        data       10x2                        160  double
+        v          10x2                        160  double
+
+Total is 101 elements using 437 bytes
+
+>> save hello.txt d;   %save data from d file to hello.txt
+>> clear
+>> load hello.txt
+>> whos
+Variables in the current scope:
+
+   Attr Name        Size                     Bytes  Class
+   ==== ====        ====                     =====  =====
+        d           1x2                         16  double
+
+Total is 2 elements using 16 bytes
+
+>> d
+d =
+
+   0.078171   0.281616
+
+>>
+>> save helloAgain.txt d -ascii    %save data in ascii format
+>> whos
+Variables in the current scope:
+
+   Attr Name        Size                     Bytes  Class
+   ==== ====        ====                     =====  =====
+        d           1x2                         16  double
+
+Total is 2 elements using 16 bytes
+
+
+
+>> A = [1 2;3 4;5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+
+>> A(3,2)   %access specific ele
+ans =  6
+>> A(2,:) %access all the element in that dimention
+ans =
+
+   3   4
+
+>> A(:,2)
+ans =
+
+   2
+   4
+   6
+
+>> A(:,1)
+ans =
+
+   1
+   3
+   5
+
+>> A([1 3], :)     %this will access 1st row and column and 3rd row and column
+ans =
+
+   1   2
+   5   6
+
+>>
+>> A(:,2) = [10;11;12]   %assign new values to all column values
+A =
+
+    1   10
+    3   11
+    5   12
+
+>>
+>> A = [A, [100;101;102]]     %append new column vector to the existing matrix
+A =
+
+     1    10   100
+     3    11   101
+     5    12   102
+
+>> A (:)
+ans =
+
+     1
+     3
+     5
+    10
+    11
+    12
+   100
+   101
+   102
+
+>> A (:)  % put all elemnts of matrix A in one column vector
+ans =
+
+     1
+     3
+     5
+    10
+    11
+    12
+   100
+   101
+   102
+
+>> size(A(:))
+ans =
+
+   9   1
+
+>> A
+A =
+
+     1    10   100
+     3    11   101
+     5    12   102
+
+>> B = [11 12;13 14;15 16]
+B =
+
+   11   12
+   13   14
+   15   16
+
+>> C=[A B]    %Concate 2 matrix
+C =
+
+     1    10   100    11    12
+     3    11   101    13    14
+     5    12   102    15    16
+
+>>
+>> C = [A ; B]     %';' put the matrix to bottom of the 1st one
+error: vertical dimensions mismatch (3x3 vs 3x2)
+>> C = [A;B]     %';' put the matrix to bottom of the 1st one
+error: vertical dimensions mismatch (3x3 vs 3x2)
+>> C = [A; B]     %';' put the matrix to bottom of the 1st one
+error: vertical dimensions mismatch (3x3 vs 3x2)
+>> B = [11 12 13;14 15 16;17 18 19]
+B =
+
+   11   12   13
+   14   15   16
+   17   18   19
+
+>> C = [A; B]     %';' put the matrix to bottom of the 1st one
+C =
+
+     1    10   100
+     3    11   101
+     5    12   102
+    11    12    13
+    14    15    16
+    17    18    19
+
+>> size (C)
+ans =
+
+   6   3
+
+>> [A, B]
+ans =
+
+     1    10   100    11    12    13
+     3    11   101    14    15    16
+     5    12   102    17    18    19
+
+>> [A, B]    %Append 2 matrices
+ans =
+
+     1    10   100    11    12    13
+     3    11   101    14    15    16
+     5    12   102    17    18    19
+
+>>
