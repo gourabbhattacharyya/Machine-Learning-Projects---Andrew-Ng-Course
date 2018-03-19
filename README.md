@@ -1,4 +1,3 @@
-"# myMachineLearning"
 This folder contains the basic algorithms  of Machine Learning and their implementation uing MATLAB
 
 
