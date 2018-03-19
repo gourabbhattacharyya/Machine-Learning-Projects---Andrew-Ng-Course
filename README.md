@@ -3,6 +3,8 @@ This folder contains the basic algorithms  of Machine Learning and their impleme
 
 Pre-requisites:
 --------------
-1.MATLAB / OCTAVE installed
-2.Basic commands of MATLAB/OCTAVE
-3.Basic knowledge of Machine Learning Algorithms 
+1. MATLAB / OCTAVE installed
+
+2. Basic commands of MATLAB/OCTAVE
+
+3. Basic knowledge of Machine Learning Algorithms 
